@@ -11,7 +11,7 @@
                 "email_link_href" => "https://wrapbootstrap.com/user/myorange",
                 "email_link_text" => '<i class="fal fa-envelope"></i>',
                 "email_link_title" => "Contact Sunny",
-                "status_banned" => true
+                "status" => "activ"
             ],
             [
                 "img" => "img/demo/authors/josh.png",
@@ -23,7 +23,7 @@
                 "email_link_href" => "https://wrapbootstrap.com/user/Walapa",
                 "email_link_text" => '<i class="fal fa-envelope"></i>',
                 "email_link_title" => "Contact Jos",
-                "status_banned" => true
+                "status" => "activ"
             ],
              [
                 "img" => "img/demo/authors/jovanni.png",
@@ -35,7 +35,7 @@
                 "email_link_href" => "https://wrapbootstrap.com/user/lodev09",
                 "email_link_text" => '<i class="fal fa-envelope"></i>',
                 "email_link_title" => "Contact Jovanni",
-                "status_banned" => false
+                "status" => "banned"
             ],
              [
                 "img" => "img/demo/authors/roberto.png",
@@ -47,14 +47,13 @@
                 "email_link_href" => "https://wrapbootstrap.com/user/sildur",
                 "email_link_text" => '<i class="fal fa-envelope"></i>',
                 "email_link_title" => "Contact Roberto",
-                "status_banned" => false
+                "status" => "banned"
             ]
         ];
     ?>
                            <div class="d-flex flex-wrap demo demo-h-spacing mt-3 mb-3">
             <?php foreach ($people as $human): ?>
-                <?php if ($human["status_banned"] == true): ?>
-                            <div class="rounded-pill bg-white shadow-sm p-2 border-faded mr-3 d-flex flex-row align-items-center justify-content-center flex-shrink-0">
+                            <div class="<?php echo $human["status"] == "banned" ? "banned" : " "; ?> rounded-pill bg-white shadow-sm p-2 border-faded mr-3 d-flex flex-row align-items-center justify-content-center flex-shrink-0">
                                 <img src="<?php echo ($human["img"]); ?>" alt="<?php echo ($human["img_alt"]); ?>" class="img-thumbnail img-responsive rounded-circle" style="width:5rem; height: 5rem;">
                                 <div class="ml-2 mr-3">
                                     <h5 class="m-0">
@@ -67,21 +66,6 @@
                                     <a href="<?php echo ($human["email_link_href"]); ?>" class="text-info fs-sm" target="_blank" title="<?php echo ($human["email_link_title"]); ?>"><?php echo ($human["email_link_text"]); ?></a>
                                 </div>
                             </div>
-                <?php else: ?>
-                            <div class="banned rounded-pill bg-white shadow-sm p-2 border-faded mr-3 d-flex flex-row align-items-center justify-content-center flex-shrink-0">
-                                <img src="<?php echo ($human["img"]); ?>" alt="<?php echo ($human["img_alt"]); ?>" class="img-thumbnail img-responsive rounded-circle" style="width:5rem; height: 5rem;">
-                                <div class="ml-2 mr-3">
-                                    <h5 class="m-0">
-                                        <?php echo ($human["name"]); ?>
-                                        <small class="m-0 fw-300">
-                                            <?php echo ($human["job_title"]); ?>
-                                        </small>
-                                    </h5>
-                                    <a href="<?php echo ($human["twitter_link_href"]); ?>" class="text-info fs-sm" target="_blank"><?php echo ($human["twitter_link_text"]); ?></a> -
-                                    <a href="<?php echo ($human["email_link_href"]); ?>" class="text-info fs-sm" target="_blank" title="<?php echo ($human["email_link_title"]); ?>"><?php echo ($human["email_link_text"]); ?></a>
-                                </div>
-                            </div>
-                <?php endif; ?>
             <?php endforeach; ?>
                             </div>
 <?php       include 'footer.php'; ?>
