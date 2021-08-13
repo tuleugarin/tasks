@@ -31,4 +31,4 @@
                         </div>
                     </div>
                     <div class="panel-container show">
-                        <div class="panel-content">
+                         <div class="panel-content">
