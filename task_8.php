@@ -1,6 +1,6 @@
 <?php include 'header.php'; ?>
     <?php
-        $pdo = new PDO("mysql:host=localhost;dbname=my_project", "root", "");
+        $pdo = new PDO("mysql:host=localhost;dbname=my_project;", "root", "");
         $sql = "SELECT * FROM lists";
         $statment = $pdo -> prepare($sql);
         $statment -> execute();
